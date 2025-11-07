@@ -197,21 +197,21 @@ if __name__ == '__main__':
     print("这个工具是为了快速的生成授权文档，13号文档目前有问题")
 
     # 检查必要的文件和文件夹是否存在
-    if not os.path.exists('information.json'):
+    if not os.path.exists('../information.json'):
         print("错误：找不到 information.json 文件")
         exit(1)
 
-    if not os.path.exists('rules'):
+    if not os.path.exists('../rules'):
         print("错误：找不到 rules 文件夹")
         exit(1)
 
-    if not os.path.exists('templates'):
+    if not os.path.exists('../templates'):
         print("错误：找不到 templates 文件夹")
         exit(1)
 
     try:
         # 从json文件读取项目信息
-        with open('information.json', 'r', encoding='utf-8') as f:
+        with open('../information.json', 'r', encoding='utf-8') as f:
             project_info = json.load(f)
         project_info = auto_add_project_info(project_info)
         print("项目信息加载成功")
@@ -222,7 +222,7 @@ if __name__ == '__main__':
         exit(1)
 
     # 遍历rules文件夹下的所有json规则文件
-    rules_dir = 'rules'
+    rules_dir = '../rules'
     rule_files = [f for f in os.listdir(rules_dir) if f.endswith('.json')]
 
     if not rule_files:

@@ -104,14 +104,14 @@ if __name__ == '__main__':
     print("这个工具是为了快速的生成授权文档，13号文档目前有问题")
 
     # 从json文件读取项目信息
-    with open('information.json', 'r', encoding='utf-8') as f:
+    with open('../information.json', 'r', encoding='utf-8') as f:
         project_info = json.load(f)
     project_info = auto_add_project_info(project_info)
 
     # 遍历rules文件夹下的所有json规则文件
     import os
 
-    rules_dir = 'rules'
+    rules_dir = '../rules'
     for rule_file in os.listdir(rules_dir):
         if rule_file.endswith('.json'):
             # 读取规则文件
